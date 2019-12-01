@@ -10,7 +10,8 @@ class Matrix
 	attr_accessor :the_matrix
 	def initialize(matrix_input)
 		if matrix_input.is_a?(String)
-			self.the_matrix = matrix_input.split("\n").map!{|row| row.split(" ")}.map!{|row| row.map!{|cell| cell.to_i}}
+			self.the_matrix = matrix_input.split("\n").map!{|row| row.split}
+			self.the_matrix.map!{|row| row.map!{|cell| cell.to_i}}
 		end
 	end
 	def columns
